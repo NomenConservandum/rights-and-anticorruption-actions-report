@@ -5,24 +5,17 @@
   paper: "presentation-16-9",
   margin: (x: 2cm, top: 1.5cm, bottom: 1.2cm),
   fill: rgb("#fcfbf9"),
-  header: context {
+  header: none,
+  footer: context {
     let p = counter(page).get().first()
     if p > 1 and p < 11 {
-      grid(
-        columns: (1fr, auto),
-        align: (left + horizon, right + horizon),
-        text(size: 10.5pt, fill: rgb("#64748b"), font: "Liberation Sans", weight: "medium")[
-          Возникновение и история коррупции на Древней Руси
-        ],
-        text(size: 10.5pt, fill: rgb("#94a3b8"), font: "Liberation Sans", weight: "bold")[
+      align(right)[
+        #text(size: 10.5pt, fill: rgb("#94a3b8"), font: "Liberation Sans", weight: "medium")[
           #p / 11
         ]
-      )
-      v(-4pt)
-      line(length: 100%, stroke: 0.5pt + rgb("#e2e8f0"))
+      ]
     }
-  },
-  footer: none
+  }
 )
 
 #set text(
